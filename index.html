@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#FFFFFF" id="hasad-theme-color" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https:; object-src 'none'; base-uri 'self';"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("hasad-theme");
+          var theme = saved === "dark" ? "dark" : "light";
+          var root = document.documentElement;
+          if (theme === "dark") {
+            root.classList.add("dark");
+            root.style.colorScheme = "dark";
+            var meta = document.getElementById("hasad-theme-color");
+            if (meta) meta.setAttribute("content", "#01341d");
+          } else {
+            root.classList.remove("dark");
+            root.style.colorScheme = "light";
+            var meta = document.getElementById("hasad-theme-color");
+            if (meta) meta.setAttribute("content", "#FFFFFF");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <title>HASAD | حصاد — Location de matériel agricole à la demande en Algérie</title>
+    <meta
+      name="description"
+      content="HASAD (حصاد) connecte les agriculteurs aux propriétaires de tracteurs, moissonneuses-batteuses et machines agricoles près de leurs terres en Algérie. Développé par Soft Click Technologies."
+    />
+
+    <!-- Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/favicon-180.png" />
+
+    <!-- OpenGraph Social Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HASAD | حصاد" />
+    <meta property="og:locale" content="fr_DZ" />
+    <meta property="og:title" content="HASAD | حصاد — Location de matériel agricole à la demande" />
+    <meta
+      property="og:description"
+      content="Votre terre. Vos machines. Votre récolte. Demandez tracteurs, moissonneuses-batteuses, semoirs et matériel d'irrigation à la demande en Algérie."
+    />
+    <meta property="og:image" content="/assets/aistudio/Logo_feuille_verte_minimaliste_d5f2311b.png" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HASAD | حصاد — Matériel agricole à la demande en Algérie" />
+    <meta
+      name="twitter:description"
+      content="Connectez-vous aux propriétaires de matériel agricole près de votre exploitation partout en Algérie."
+    />
+    <meta name="twitter:image" content="/assets/aistudio/Logo_feuille_verte_minimaliste_d5f2311b.png" />
+
+    <!-- Typography: Alexandria + IBM Plex Sans Arabic (Arabic) + Outfit (Display) + Plus Jakarta Sans (Body) + JetBrains Mono (Numerals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "HASAD",
+            "alternateName": "حصاد",
+            "logo": "/assets/aistudio/Logo_feuille_verte_minimaliste_d5f2311b.png",
+            "parentOrganization": {
+              "@type": "Organization",
+              "name": "Soft Click Technologies"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "name": "HASAD",
+            "inLanguage": "fr-DZ"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "HASAD",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Android, iOS",
+            "description": "Plateforme algérienne de location de matériel agricole à la demande développée par Soft Click Technologies.",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Algérie"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Soft Click Technologies"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-[#0D1F15] dark:bg-[#01341d] dark:text-white antialiased selection:bg-[#6fcb3b]/30 selection:text-[#01341d] dark:selection:bg-[#6fcb3b]/35 dark:selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

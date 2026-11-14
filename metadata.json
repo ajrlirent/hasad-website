@@ -1,0 +1,8 @@
+{
+  "name": "HASAD",
+  "description": "HASAD (حصاد) — On-demand agricultural machinery rental platform in Algeria by Soft Click Technologies. Connect farmers with nearby tractors, harvesters, and farm equipment owners.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
