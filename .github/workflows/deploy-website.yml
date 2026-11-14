@@ -24,7 +24,7 @@ jobs:
           node-version: 20
       - name: Install
         working-directory: .
-        run: npm ci
+        run: npm install --no-audit --no-fund
       - name: Build
         working-directory: .
         env:
