@@ -15,7 +15,9 @@ interface HasadLogoProps {
   className?: string;
 }
 
-const HASAD_LOGO_SRC = "/assets/aistudio/Logo_feuille_verte_minimaliste_d5f2311b.png";
+// Resolved against Vite's base so it works both at "/" and under a sub-path
+// deployment such as "/hasad-website/".
+const HASAD_LOGO_SRC = `${import.meta.env.BASE_URL}assets/brand/hasad-logo.png`;
 
 /**
  * Emblème officiel HASAD | حصاد (fichier logo fourni) détouré sans fond blanc
@@ -30,6 +32,7 @@ export const HasadMark: FC<{ className?: string; loading?: "eager" | "lazy" }> =
       src={HASAD_LOGO_SRC}
       alt="HASAD logo"
       loading={loading}
+      isAlreadyAlpha
       className="w-full h-full object-contain"
     />
   </span>
