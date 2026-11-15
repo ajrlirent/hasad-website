@@ -103,8 +103,8 @@ export const Navbar: FC<NavbarProps> = ({
               lang={lang}
               showLatin={lang !== "ar"}
               showArabic={lang === "ar"}
-              markSizeClassName="w-8 h-8"
-              wordmarkSizeClassName="text-[19px]"
+              markSizeClassName="w-[38px] h-[38px]"
+              wordmarkSizeClassName="text-[23px]"
               wordmarkColorClassName="text-[#6fcb3b]"
             />
           </span>
@@ -114,8 +114,8 @@ export const Navbar: FC<NavbarProps> = ({
               lang={lang}
               showLatin={lang !== "ar"}
               showArabic={lang === "ar"}
-              markSizeClassName="w-10 h-10"
-              wordmarkSizeClassName="text-[23px]"
+              markSizeClassName="w-[48px] h-[48px]"
+              wordmarkSizeClassName="text-[27.6px]"
               wordmarkColorClassName="text-[#6fcb3b]"
             />
           </span>
