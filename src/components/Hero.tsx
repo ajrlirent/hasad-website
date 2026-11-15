@@ -200,7 +200,7 @@ export const Hero: FC<HeroProps> = ({ onDownloadClick, lang = "fr", t }) => {
                   x: { type: "spring", stiffness: 120, damping: 22 },
                   y: { type: "spring", stiffness: 120, damping: 22 },
                 }}
-                className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[115%] sm:w-[113%] max-w-[742px] aspect-square flex items-center justify-center pointer-events-none"
+                className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[150%] sm:w-[147%] max-w-[965px] aspect-square flex items-center justify-center pointer-events-none"
               >
                 <HasadMark
                   loading="eager"
