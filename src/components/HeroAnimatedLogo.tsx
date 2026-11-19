@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { type FC, type CSSProperties } from "react";
 
 /**
  * Animated hero emblem.
@@ -7,6 +7,9 @@ import { type FC } from "react";
  * emblem (which reveals the mark petal-by-petal: leaf → harvest → plowing →
  * completed logo), holds it for a few seconds, and fades back to the HASAD
  * logo. Loops indefinitely.
+ *
+ * The clipping-mask emblem is rendered ~20% smaller than the HASAD logo, and
+ * both layers get a soft (feathered) edge (~10%).
  */
 export const HeroAnimatedLogo: FC<{ className?: string }> = ({
   className = "",
@@ -14,6 +17,13 @@ export const HeroAnimatedLogo: FC<{ className?: string }> = ({
   const base = import.meta.env.BASE_URL;
   const logoSrc = `${base}assets/brand/hasad-logo.png`;
   const maskSrc = `${base}assets/brand/hasad-logo-mask.png`;
+
+  // Soft edges: feather the outer ~10% of the emblem.
+  const softEdge: CSSProperties = {
+    WebkitMaskImage:
+      "radial-gradient(ellipse at center, black 90%, transparent 100%)",
+    maskImage: "radial-gradient(ellipse at center, black 90%, transparent 100%)",
+  };
 
   return (
     <div className={`relative w-full h-full ${className}`}>
@@ -41,16 +51,23 @@ export const HeroAnimatedLogo: FC<{ className?: string }> = ({
         src={logoSrc}
         alt="HASAD logo"
         loading="eager"
+        style={softEdge}
         className="hasad-hero-logo-a absolute inset-0 w-full h-full object-contain drop-shadow-[0_18px_40px_rgba(111,203,59,0.22)] dark:drop-shadow-[0_24px_56px_rgba(111,203,59,0.28)]"
       />
 
-      {/* Layer B — clipping-mask emblem (reveals leaf → harvest → plowing → complete) */}
-      <img
-        src={maskSrc}
-        alt="HASAD emblem"
-        loading="eager"
-        className="hasad-hero-logo-b absolute inset-0 w-full h-full object-contain drop-shadow-[0_18px_40px_rgba(111,203,59,0.22)] dark:drop-shadow-[0_24px_56px_rgba(111,203,59,0.28)]"
-      />
+      {/* Layer B — clipping-mask emblem, ~20% smaller, soft edges */}
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        style={{ transform: "scale(0.8)", transformOrigin: "center" }}
+      >
+        <img
+          src={maskSrc}
+          alt="HASAD emblem"
+          loading="eager"
+          style={softEdge}
+          className="hasad-hero-logo-b w-full h-full object-contain drop-shadow-[0_18px_40px_rgba(111,203,59,0.22)] dark:drop-shadow-[0_24px_56px_rgba(111,203,59,0.28)]"
+        />
+      </div>
     </div>
   );
 };
