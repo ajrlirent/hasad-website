@@ -1,7 +1,7 @@
 import { ArrowDownRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import { useState, type FC, type PointerEvent } from "react";
-import { HasadMark } from "./HasadLogo";
+import { HeroAnimatedLogo } from "./HeroAnimatedLogo";
 import { TransparentMachineImg } from "./TransparentMachineImg";
 import type { Language, Translations } from "../config/translations";
 
@@ -202,10 +202,7 @@ export const Hero: FC<HeroProps> = ({ onDownloadClick, lang = "fr", t }) => {
                 }}
                 className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[150%] sm:w-[147%] max-w-[965px] aspect-square flex items-center justify-center pointer-events-none"
               >
-                <HasadMark
-                  loading="eager"
-                  className="w-full h-full drop-shadow-[0_18px_40px_rgba(111,203,59,0.22)] dark:drop-shadow-[0_24px_56px_rgba(111,203,59,0.28)]"
-                />
+                <HeroAnimatedLogo />
               </motion.div>
 
               {/* Layer 2: Combine Harvester (Upper-Right Stage, header facing right) */}
