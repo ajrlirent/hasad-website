@@ -160,7 +160,7 @@ export const Hero: FC<HeroProps> = ({ onDownloadClick, lang = "fr", t }) => {
 
             {/* Quiet Unboxed Audience Metadata */}
             <div
-              className={`mt-6 sm:mt-9 pt-4 sm:pt-6 border-t border-neutral-200/80 dark:border-white/12 flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1 text-xs sm:text-[13px] text-[#41544A] dark:text-emerald-200/80 ${
+              className={`mt-3 sm:mt-5 pt-4 sm:pt-6 border-t border-neutral-200/80 dark:border-white/12 flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1 text-xs sm:text-[13px] text-[#41544A] dark:text-emerald-200/80 ${
                 isRtl ? "justify-end flex-row-reverse" : ""
               }`}
             >
